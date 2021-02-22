@@ -1,3 +1,4 @@
+package ITAcademyM01;
 
 public class M1class {
 
