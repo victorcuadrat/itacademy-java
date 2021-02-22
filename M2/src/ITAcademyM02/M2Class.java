@@ -148,7 +148,12 @@ public class M2Class {
 		 * Nosaltres li vam passar l'altura de la piràmide per teclat. Aquest és un exemple: 
 		 */
 		
-		int number2 = Integer.parseInt(JOptionPane.showInputDialog("Number of asterisks (at least 11): " ));
+		
+		int number2 = 0;
+		while (number2 < 11) {
+			number2 = Integer.parseInt(JOptionPane.showInputDialog("Number of asterisks (at least 11): " ));
+		}
+		
 		String asterisks = "";
 		int counter2 = 1;
 		while (counter2 <= number2) {
