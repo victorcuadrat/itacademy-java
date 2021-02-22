@@ -44,16 +44,6 @@ public class M2Class {
 			Si trobes un numero, mostra per pantalla: ‘Els noms de persones no contenen números!’. 
 		 */
 		
-		// nom is already a List<char>
-		// System.out.println(nom.getClass().getSimpleName());
-		// List<char[]> nomLlista = Arrays.asList(nom);
-		
-		/** Com s'implementa això?
-		 * public static boolean isVowel(char c) {
-			  return "AEIOUaeiou".indexOf(c) != -1;
-			}
-		 */
-		
 		for (char n:nom) {
 			
 			// Checks if is a Letter or a Digit
