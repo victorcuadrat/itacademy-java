@@ -11,7 +11,7 @@ public class M3Nivell1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		f
+		
 		/** NIVELL 1
 		 * - Fase 1
 			Crea sis variables tipu string buides. 

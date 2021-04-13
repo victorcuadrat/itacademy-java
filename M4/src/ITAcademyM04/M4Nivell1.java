@@ -3,13 +3,15 @@ package ITAcademyM04;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Scanner;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
 
-import com.sun.tools.javac.util.ArrayUtils;
-import com.sun.tools.javac.util.List;
+// import com.sun.tools.javac.util.ArrayUtils;
+// import com.sun.tools.javac.util.List;
 
 
 public class M4Nivell1 {
@@ -37,8 +39,8 @@ public class M4Nivell1 {
 		
 		int cinc = 5, deu = 10, vint = 20, cinquanta = 50, cent = 100, doscents = 200, cinccents = 500;
 		
-		String[] menu = new String[8];
-		String[] preus = new String[8];
+		String plats[] = new String[10];
+		int preus[] = new int[10];
 
 		/**
 		 * Fase 2
@@ -64,28 +66,32 @@ public class M4Nivell1 {
 		menuDiccionari.put("Vi", 28);
 		menuDiccionari.put("Amanida", 9);
 		menuDiccionari.put("Peix", 17);
+		menuDiccionari.put("Marisc", 37);
+		menuDiccionari.put("Llom", 7);
 		
 		int a = 0;
-		for (Map.Entry item : menuDiccionari.entrySet()) {
-			menu[a] = item.getKey().toString();
-			preus[a] = item.getValue().toString();
+		for (Map.Entry<String, Integer> entry:menuDiccionari.entrySet()) {
+			plats[a] = entry.getKey();
+			preus[a] = entry.getValue();
 			a++;
 		}
 
-		System.out.println(Arrays.toString(menu));
+		System.out.println(Arrays.toString(plats));
 		System.out.println(Arrays.toString(preus));
 		
-		java.util.Iterator<Entry<String, Integer>> iter = menuDiccionari.entrySet().iterator();
+		int continuar = 1;
+		List<String> platsDemanats = new ArrayList<String>();
 		
-		List<Integer> comanda = new ArrayList<Integer>();
-		
-		int b = 0;
-		while (b < menu.length) {
-			System.out.println("Vols" + menu[menu.length] + "que val" + preus[preus.length] + "?");
-			menu = ArrayUtils.removeElement(menu, menu[menu.length]);
-			preus = ArrayUtils.removeElement(preus, preus[preus.length]);
-		}
+		while(continuar == 1){
+			
+		    Scanner scanner = new Scanner(System.in);
+			String plat = scanner.next();
+		    platsDemanats.add(plat);
 
+		    continuar = scanner.nextInt();
+
+		}
+		
 		/**
 		 * Fase 3
 		 * Un cop hem acabat de demanar el menjar, haurem de comparar la llista amb

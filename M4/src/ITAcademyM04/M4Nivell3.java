@@ -8,9 +8,6 @@ import java.util.Map.Entry;
 
 import javax.swing.text.html.HTMLDocument.Iterator;
 
-import com.sun.tools.javac.util.ArrayUtils;
-import com.sun.tools.javac.util.List;
-
 public class M4Nivell3 {
 
 	public static void main(String[] args) {
