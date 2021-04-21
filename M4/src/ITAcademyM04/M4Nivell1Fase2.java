@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class M4Nivell1Fase2 {
 
 	public static void main(String[] args) {
@@ -52,24 +54,35 @@ public class M4Nivell1Fase2 {
 		System.out.println(Arrays.toString(plats));
 		System.out.println(Arrays.toString(preus));
 		
-		int continuar = 1;
+		String continuar = "1";
+		boolean demanarPlat = true;
 		List<String> platsDemanats = new ArrayList<String>();
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		try {
-			while(continuar == 1) {
-				System.out.println("Quin plat vols?");
-				String plat = scanner.nextLine();
-			    platsDemanats.add(plat);
 
-			    System.out.println("Vols continuar? (1:Si / 0:No)");
-			    continuar = scanner.nextInt();
+		while (continuar.equals("1")) {
+
+			if (demanarPlat) {
+				System.out.println("Quin plat vols?");
+				String plat = getAnswer("Quin plat vols?", "Plats");
+				platsDemanats.add(plat);
 			}
-		} finally {
-			scanner.close();
+
+			System.out.println("Vols continuar? (1:Si / 0:No)");
+			String respostaContinuar = getAnswer("Vols continuar? (1:Si / 0:No)", "Continuar");
+			if (!respostaContinuar.equals("1") && !respostaContinuar.equals("0")) {
+				System.out.println("Resposta incorrecte");
+				demanarPlat = false;
+			} else {
+				continuar = respostaContinuar;
+				demanarPlat = true;
+			}
 		}
-		
+		System.out.println(platsDemanats);
+	}
+	
+	private static String getAnswer(String title, String question) {
+		String answer = JOptionPane.showInputDialog(null, title, question, JOptionPane.QUESTION_MESSAGE);
+		return answer;
+
 	}
 
 }
