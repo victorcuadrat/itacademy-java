@@ -51,7 +51,7 @@ public class M4Nivell1Fase3 {
 					System.out.println("No hi ha: " + p);
 				}
 			} catch(Exception e) {
-			      System.out.println("Alguna cosa no ha funcionat.");
+			      System.out.println("Alguna cosa no ha funcionat." + e);
 			}
 		}
 	     System.out.println("La suma total és: " + sumaTotal);

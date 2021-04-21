@@ -58,25 +58,30 @@ public class M4Nivell1Fase2 {
 		boolean demanarPlat = true;
 		List<String> platsDemanats = new ArrayList<String>();
 
-		while (continuar.equals("1")) {
+		try {
+			while (continuar.equals("1")) {
 
-			if (demanarPlat) {
-				System.out.println("Quin plat vols?");
-				String plat = getAnswer("Quin plat vols?", "Plats");
-				platsDemanats.add(plat);
-			}
+				if (demanarPlat) {
+					System.out.println("Quin plat vols?");
+					String plat = getAnswer("Quin plat vols?", "Plats");
+					platsDemanats.add(plat);
+				}
 
-			System.out.println("Vols continuar? (1:Si / 0:No)");
-			String respostaContinuar = getAnswer("Vols continuar? (1:Si / 0:No)", "Continuar");
-			if (!respostaContinuar.equals("1") && !respostaContinuar.equals("0")) {
-				System.out.println("Resposta incorrecte");
-				demanarPlat = false;
-			} else {
-				continuar = respostaContinuar;
-				demanarPlat = true;
+				System.out.println("Vols continuar? (1:Si / 0:No)");
+				String respostaContinuar = getAnswer("Vols continuar? (1:Si / 0:No)", "Continuar");
+				if (!respostaContinuar.equals("1") && !respostaContinuar.equals("0")) {
+					System.out.println("Resposta incorrecte");
+					demanarPlat = false;
+				} else {
+					continuar = respostaContinuar;
+					demanarPlat = true;
+				}
 			}
+			System.out.println(platsDemanats);
+		} catch(Exception e) {
+		      System.out.println("Alguna cosa no ha funcionat." + e);
 		}
-		System.out.println(platsDemanats);
+		
 	}
 	
 	private static String getAnswer(String title, String question) {
